@@ -74,8 +74,9 @@ class _LoginPageState extends State<LoginPage> {
               child: new ListView(
                 shrinkWrap: true,
                 children: <Widget>[
+                  _sizedBox(50.0),
                   _logo(),
-                  _sizedBox(48.0),
+                  _sizedBox(100.0),
                   _emailInput(),
                   _sizedBox(15.0),
                   _passwordInput(),
