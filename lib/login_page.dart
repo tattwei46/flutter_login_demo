@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:firebase_auth/firebase_auth.dart';
 import 'auth.dart';
 
 class LoginPage extends StatefulWidget {
@@ -11,14 +10,14 @@ class LoginPage extends StatefulWidget {
   State<StatefulWidget> createState() => new _LoginPageState();
 }
 
-enum FormType { login, register }
+enum FormType { LOGIN, REGISTER }
 
 class _LoginPageState extends State<LoginPage> {
   final formKey = new GlobalKey<FormState>();
 
   String _email;
   String _password;
-  FormType _formType = FormType.login;
+  FormType _formType = FormType.LOGIN;
 
   bool validateAndSave() {
     final form = formKey.currentState;
@@ -32,7 +31,7 @@ class _LoginPageState extends State<LoginPage> {
   void validateAndSubmit() async {
     if (validateAndSave()) {
       try {
-        if (_formType == FormType.login) {
+        if (_formType == FormType.LOGIN) {
           String userId =
               await widget.auth.signInWithEmailAndPassword(_email, _password);
           print('Signed in: $userId');
@@ -48,17 +47,17 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  void moveToRegister() {
+  void switchRegisterMode() {
     formKey.currentState.reset();
     setState(() {
-      _formType = FormType.register;
+      _formType = FormType.REGISTER;
     });
   }
 
-  void moveToLogin() {
+  void switchLoginMode() {
     formKey.currentState.reset();
     setState(() {
-      _formType = FormType.login;
+      _formType = FormType.LOGIN;
     });
   }
 
@@ -143,13 +142,13 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _label() {
-    if (_formType == FormType.login) {
+    if (_formType == FormType.LOGIN) {
       return
         new FlatButton(
           child: new Text('Create an account',
               style:
                   new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
-          onPressed: moveToRegister,
+          onPressed: switchRegisterMode,
         );
     } else {
       return
@@ -157,12 +156,12 @@ class _LoginPageState extends State<LoginPage> {
           child: new Text('Have an account? Sign in',
               style:
                   new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
-          onPressed: moveToLogin,
+          onPressed: switchLoginMode,
         );
     }
   }
   Widget _submitButton() {
-    if (_formType == FormType.login) {
+    if (_formType == FormType.LOGIN) {
       return
         new Padding(
             padding: EdgeInsets.symmetric(vertical: 16.0),
