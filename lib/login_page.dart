@@ -103,11 +103,7 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _emailInput() {
-    return new DecoratedBox(
-        decoration: new BoxDecoration(
-            borderRadius: new BorderRadius.all(new Radius.circular(30.0)),
-            color: Colors.white),
-        child: new TextFormField(
+    return new TextFormField(
           keyboardType: TextInputType.emailAddress,
           autofocus: false,
           decoration: new InputDecoration(
@@ -118,15 +114,11 @@ class _LoginPageState extends State<LoginPage> {
               )),
           validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
           onSaved: (value) => _email = value,
-        ));
+        );
   }
 
   Widget _passwordInput() {
-    return new DecoratedBox(
-        decoration: new BoxDecoration(
-            borderRadius: new BorderRadius.all(new Radius.circular(30.0)),
-            color: Colors.white),
-        child: new TextFormField(
+    return new TextFormField(
           obscureText: true,
           autofocus: false,
           decoration: new InputDecoration(
@@ -138,7 +130,7 @@ class _LoginPageState extends State<LoginPage> {
           validator: (value) =>
               value.isEmpty ? 'Password can\'t be empty' : null,
           onSaved: (value) => _password = value,
-        ));
+        );
   }
 
   Widget _label() {
