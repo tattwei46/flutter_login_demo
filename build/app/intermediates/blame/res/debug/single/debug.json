@@ -1,0 +1,354 @@
+[
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-mdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-v21_notification_action_background.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-v21/notification_action_background.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_template_big_media_narrow_custom.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/d7ae3dad64736774691d9a5efbc5e6b2/res/layout/notification_template_big_media_narrow_custom.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_action_tombstone.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/layout/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-mdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_common_full_open_on_phone.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-hdpi-v4/common_full_open_on_phone.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_template_part_time.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/layout/notification_template_part_time.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_launch_background.xml.flat",
+        "source": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/android/app/src/main/res/drawable/launch_background.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-mdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark_normal.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_icon_dark_normal.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark_focused.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_icon_dark_focused.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_notification_tile_bg.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable/notification_tile_bg.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_notification_icon_background.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable/notification_icon_background.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-xhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-hdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-hdpi-v4/googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_template_lines_media.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/d7ae3dad64736774691d9a5efbc5e6b2/res/layout/notification_template_lines_media.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-mdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-hdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_template_media_custom.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/d7ae3dad64736774691d9a5efbc5e6b2/res/layout/notification_template_media_custom.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-xhdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-xhdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_light.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-mdpi-v4/googleg_standard_color_18.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-hdpi-v4/googleg_standard_color_18.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_action.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/layout/notification_action.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_disabled.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_text_disabled.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-mdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/mipmap-mdpi_ic_launcher.png.flat",
+        "source": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/android/app/src/main/res/mipmap-mdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_light_normal.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_text_light_normal.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout-v16_notification_template_custom_big.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/layout-v16/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_light_focused.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_text_light_focused.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_dark.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_icon_dark.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-xxhdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/mipmap-xhdpi_ic_launcher.png.flat",
+        "source": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/android/app/src/main/res/mipmap-xhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_notification_bg_low.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable/notification_bg_low.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_media_action.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/d7ae3dad64736774691d9a5efbc5e6b2/res/layout/notification_media_action.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_dark_normal.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_text_dark_normal.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-xhdpi-v4/googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/mipmap-hdpi_ic_launcher.png.flat",
+        "source": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/android/app/src/main/res/mipmap-hdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-xxhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-hdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_common_full_open_on_phone.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-xhdpi-v4/common_full_open_on_phone.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-xhdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-hdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout-v21_notification_template_icon_group.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/layout-v21/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-hdpi-v4/notification_bg_normal.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-mdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-xhdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-xhdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-xhdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout-v21_notification_action_tombstone.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/layout-v21/notification_action_tombstone.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_template_part_chronometer.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/layout/notification_template_part_chronometer.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-hdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/color_common_google_signin_btn_text_dark.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/color/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_template_media.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/d7ae3dad64736774691d9a5efbc5e6b2/res/layout/notification_template_media.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xxhdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-xxhdpi-v4/googleg_standard_color_18.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_light.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_icon_light.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/color_common_google_signin_btn_text_light.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/color/common_google_signin_btn_text_light.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/mipmap-xxhdpi_ic_launcher.png.flat",
+        "source": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/android/app/src/main/res/mipmap-xxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout-v21_notification_action.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/layout-v21/notification_action.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout-v21_notification_template_custom_big.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/layout-v21/notification_template_custom_big.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_template_big_media_custom.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/d7ae3dad64736774691d9a5efbc5e6b2/res/layout/notification_template_big_media_custom.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_light_focused.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_icon_light_focused.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_icon_light_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-hdpi-v4/common_google_signin_btn_icon_light_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xxhdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-xxhdpi-v4/googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_media_cancel_action.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/d7ae3dad64736774691d9a5efbc5e6b2/res/layout/notification_media_cancel_action.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_template_icon_group.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/layout/notification_template_icon_group.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_common_google_signin_btn_icon_dark_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-hdpi-v4/common_google_signin_btn_icon_dark_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_dark.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_text_dark.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-xxhdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/mipmap-xxxhdpi_ic_launcher.png.flat",
+        "source": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/android/app/src/main/res/mipmap-xxxhdpi/ic_launcher.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_pressed.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-mdpi-v4/notification_bg_low_pressed.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-mdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/color_common_google_signin_btn_tint.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/color/common_google_signin_btn_tint.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_template_big_media_narrow.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/d7ae3dad64736774691d9a5efbc5e6b2/res/layout/notification_template_big_media_narrow.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_light_normal.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_icon_light_normal.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_googleg_disabled_color_18.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-mdpi-v4/googleg_disabled_color_18.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_text_dark_focused.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_text_dark_focused.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_common_google_signin_btn_text_light_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-xhdpi-v4/common_google_signin_btn_text_light_normal_background.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_common_google_signin_btn_icon_disabled.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable/common_google_signin_btn_icon_disabled.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_notification_bg_normal_pressed.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-xhdpi-v4/notification_bg_normal_pressed.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/layout_notification_template_big_media.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-media-compat-26.1.0.aar/d7ae3dad64736774691d9a5efbc5e6b2/res/layout/notification_template_big_media.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-hdpi-v4_notify_panel_notification_icon_bg.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-hdpi-v4/notify_panel_notification_icon_bg.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xhdpi-v4_googleg_standard_color_18.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-xhdpi-v4/googleg_standard_color_18.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable_notification_bg.xml.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable/notification_bg.xml"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-mdpi-v4_notification_bg_low_normal.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/support-compat-26.1.0.aar/caf617ad72beef0c7591d3e0ac37a79f/res/drawable-mdpi-v4/notification_bg_low_normal.9.png"
+    },
+    {
+        "merged": "/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/res/merged/debug/drawable-xxhdpi-v4_common_google_signin_btn_text_dark_normal_background.9.png.flat",
+        "source": "/Users/davidcheah/.gradle/caches/transforms-1/files-1.1/play-services-base-15.0.1.aar/49f6b2dedb8db0c903bac3b756fea917/res/drawable-xxhdpi-v4/common_google_signin_btn_text_dark_normal_background.9.png"
+    }
+]

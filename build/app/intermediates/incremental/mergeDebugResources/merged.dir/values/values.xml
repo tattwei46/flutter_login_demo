@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:ns1="urn:oasis:names:tc:xliff:document:1.2">
+    <color name="common_google_signin_btn_text_dark_default">@android:color/white</color>
+    <color name="common_google_signin_btn_text_dark_disabled">#1F000000</color>
+    <color name="common_google_signin_btn_text_dark_focused">@android:color/black</color>
+    <color name="common_google_signin_btn_text_dark_pressed">@android:color/white</color>
+    <color name="common_google_signin_btn_text_light_default">#90000000</color>
+    <color name="common_google_signin_btn_text_light_disabled">#1F000000</color>
+    <color name="common_google_signin_btn_text_light_focused">#90000000</color>
+    <color name="common_google_signin_btn_text_light_pressed">#DE000000</color>
+    <color name="notification_action_color_filter">#ffffffff</color>
+    <color name="notification_icon_bg_color">#ff9e9e9e</color>
+    <color name="notification_material_background_media_default_color">#ff424242</color>
+    <color name="primary_text_default_material_dark">#ffffffff</color>
+    <color name="ripple_material_light">#1f000000</color>
+    <color name="secondary_text_default_material_dark">#b3ffffff</color>
+    <color name="secondary_text_default_material_light">#8a000000</color>
+    <declare-styleable name="FontFamily"><attr format="string" name="fontProviderAuthority"/><attr format="string" name="fontProviderPackage"/><attr format="string" name="fontProviderQuery"/><attr format="reference" name="fontProviderCerts"/><attr name="fontProviderFetchStrategy">
+            
+            <enum name="blocking" value="0"/>
+            
+            <enum name="async" value="1"/>
+        </attr><attr format="integer" name="fontProviderFetchTimeout">
+          
+            <enum name="forever" value="-1"/>
+        </attr></declare-styleable>
+    <declare-styleable name="FontFamilyFont"><attr name="fontStyle">
+            <enum name="normal" value="0"/>
+            <enum name="italic" value="1"/>
+        </attr><attr format="reference" name="font"/><attr format="integer" name="fontWeight"/></declare-styleable>
+    <declare-styleable name="LoadingImageView"><attr name="imageAspectRatioAdjust">
+<enum name="none" value="0"/>
+
+<enum name="adjust_width" value="1"/>
+
+<enum name="adjust_height" value="2"/>
+
+</attr><attr format="float" name="imageAspectRatio"/><attr format="boolean" name="circleCrop"/></declare-styleable>
+    <declare-styleable name="SignInButton"><attr format="reference" name="buttonSize">
+<enum name="standard" value="0"/>
+
+<enum name="wide" value="1"/>
+
+<enum name="icon_only" value="2"/>
+
+</attr><attr format="reference" name="colorScheme">
+<enum name="dark" value="0"/>
+
+<enum name="light" value="1"/>
+
+<enum name="auto" value="2"/>
+
+</attr><attr format="reference|string" name="scopeUris"/></declare-styleable>
+    <dimen name="compat_button_inset_horizontal_material">4dp</dimen>
+    <dimen name="compat_button_inset_vertical_material">6dp</dimen>
+    <dimen name="compat_button_padding_horizontal_material">8dp</dimen>
+    <dimen name="compat_button_padding_vertical_material">4dp</dimen>
+    <dimen name="compat_control_corner_material">2dp</dimen>
+    <dimen name="notification_action_icon_size">32dp</dimen>
+    <dimen name="notification_action_text_size">13sp</dimen>
+    <dimen name="notification_big_circle_margin">12dp</dimen>
+    <dimen name="notification_content_margin_start">8dp</dimen>
+    <dimen name="notification_large_icon_height">64dp</dimen>
+    <dimen name="notification_large_icon_width">64dp</dimen>
+    <dimen name="notification_main_column_padding_top">10dp</dimen>
+    <dimen name="notification_media_narrow_margin">@dimen/notification_content_margin_start</dimen>
+    <dimen name="notification_right_icon_size">16dp</dimen>
+    <dimen name="notification_right_side_padding_top">2dp</dimen>
+    <dimen name="notification_small_icon_background_padding">3dp</dimen>
+    <dimen name="notification_small_icon_size_as_large">24dp</dimen>
+    <dimen name="notification_subtext_size">13sp</dimen>
+    <dimen name="notification_top_pad">10dp</dimen>
+    <dimen name="notification_top_pad_large_text">5dp</dimen>
+    <drawable name="notification_template_icon_bg">#3333B5E5</drawable>
+    <drawable name="notification_template_icon_low_bg">#0cffffff</drawable>
+    <item name="line1" type="id"/>
+    <item name="line3" type="id"/>
+    <item name="text" type="id"/>
+    <item name="text2" type="id"/>
+    <item name="title" type="id"/>
+    <integer name="cancel_button_image_alpha">127</integer>
+    <integer name="google_play_services_version">12451000</integer>
+    <integer name="status_bar_notification_info_maxnum">999</integer>
+    <string msgid="2523291102206661146" name="common_google_play_services_enable_button">Enable</string>
+    <string msgid="227660514972886228" name="common_google_play_services_enable_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t work unless you enable Google Play services.</string>
+    <string msgid="5122002158466380389" name="common_google_play_services_enable_title">Enable Google Play services</string>
+    <string msgid="7153882981874058840" name="common_google_play_services_install_button">Install</string>
+    <string name="common_google_play_services_install_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are missing from your device.</string>
+    <string msgid="7215213145546190223" name="common_google_play_services_install_title">Get Google Play services</string>
+    <string name="common_google_play_services_notification_channel_name">Google Play services availability</string>
+    <string name="common_google_play_services_notification_ticker">Google Play services error</string>
+    <string name="common_google_play_services_unknown_issue"><ns1:g id="app_name">%1$s</ns1:g> is having trouble with Google Play services. Please try again.</string>
+    <string name="common_google_play_services_unsupported_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are not supported by your device.</string>
+    <string msgid="6556509956452265614" name="common_google_play_services_update_button">Update</string>
+    <string msgid="9053896323427875356" name="common_google_play_services_update_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run unless you update Google Play services.</string>
+    <string msgid="6006316683626838685" name="common_google_play_services_update_title">Update Google Play services</string>
+    <string name="common_google_play_services_updating_text"><ns1:g id="app_name">%1$s</ns1:g> won\'t run without Google Play services, which are currently updating.</string>
+    <string name="common_google_play_services_wear_update_text">New version of Google Play services needed. It will update itself shortly.</string>
+    <string name="common_open_on_phone">Open on phone</string>
+    <string name="common_signin_button_text">Sign in</string>
+    <string name="common_signin_button_text_long">Sign in with Google</string>
+    <string name="default_web_client_id" translatable="false">503370235857-3cuorpuf59haleofguql991tiv51db1b.apps.googleusercontent.com</string>
+    <string name="firebase_database_url" translatable="false">https://flutter-login-demo-5f414.firebaseio.com</string>
+    <string name="gcm_defaultSenderId" translatable="false">503370235857</string>
+    <string name="google_api_key" translatable="false">AIzaSyDIOybdmyaxGXA7Mp7sx7y905lBMTIQfCQ</string>
+    <string name="google_app_id" translatable="false">1:503370235857:android:253e1da980d40be4</string>
+    <string name="google_crash_reporting_api_key" translatable="false">AIzaSyDIOybdmyaxGXA7Mp7sx7y905lBMTIQfCQ</string>
+    <string name="google_storage_bucket" translatable="false">flutter-login-demo-5f414.appspot.com</string>
+    <string name="project_id" translatable="false">flutter-login-demo-5f414</string>
+    <string name="status_bar_notification_info_overflow">999+</string>
+    <style name="LaunchTheme" parent="@android:style/Theme.Black.NoTitleBar">
+        <!-- Show a splash screen on the activity. Automatically removed when
+             Flutter draws its first frame -->
+        <item name="android:windowBackground">@drawable/launch_background</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification" parent="@android:style/TextAppearance.StatusBar.EventContent"/>
+    <style name="TextAppearance.Compat.Notification.Info">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification.Info.Media"/>
+    <style name="TextAppearance.Compat.Notification.Line2" parent="TextAppearance.Compat.Notification.Info"/>
+    <style name="TextAppearance.Compat.Notification.Line2.Media" parent="TextAppearance.Compat.Notification.Info.Media"/>
+    <style name="TextAppearance.Compat.Notification.Media"/>
+    <style name="TextAppearance.Compat.Notification.Time">
+        <item name="android:textSize">12sp</item>
+        <item name="android:textColor">?android:attr/textColorSecondary</item>
+    </style>
+    <style name="TextAppearance.Compat.Notification.Time.Media"/>
+    <style name="TextAppearance.Compat.Notification.Title" parent="@android:style/TextAppearance.StatusBar.EventContent.Title"/>
+    <style name="TextAppearance.Compat.Notification.Title.Media"/>
+    <style name="Widget.Compat.NotificationActionContainer" parent=""/>
+    <style name="Widget.Compat.NotificationActionText" parent=""/>
+</resources>

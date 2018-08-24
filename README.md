@@ -1,2 +1,8 @@
 # flutter_login_demo
-A demo login app with Flutter and Firebae
+
+A new Flutter project.
+
+## Getting Started
+
+For help getting started with Flutter, view our online
+[documentation](https://flutter.io/).

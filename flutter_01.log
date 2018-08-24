@@ -1,0 +1,106 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter build bundle --suppress-analytics --target /Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/lib/main.dart --preview-dart-2 --filesystem-scheme org-dartlang-root --depfile /Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/flutter/debug/snapshot_blob.bin.d --asset-dir /Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/flutter/debug/flutter_assets
+
+## exception
+
+RangeError: RangeError (index): Invalid value: Only valid value is 0: 1
+
+```
+#0      List.[] (dart:core-patch/dart:core/growable_array.dart:141)
+#1      readDepfile (package:flutter_tools/src/base/fingerprint.dart:174)
+<asynchronous suspension>
+#2      Fingerprinter._getPaths (package:flutter_tools/src/base/fingerprint.dart:88)
+<asynchronous suspension>
+#3      Fingerprinter.doesFingerprintMatch (package:flutter_tools/src/base/fingerprint.dart:60)
+<asynchronous suspension>
+#4      KernelCompiler.compile (package:flutter_tools/src/compile.dart:104)
+<asynchronous suspension>
+#5      build (package:flutter_tools/src/bundle.dart:79)
+<asynchronous suspension>
+#6      BuildBundleCommand.runCommand (package:flutter_tools/src/commands/build_bundle.dart:72)
+<asynchronous suspension>
+#7      FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:344)
+<asynchronous suspension>
+#8      FlutterCommand.run.<anonymous closure> (package:flutter_tools/src/runner/flutter_command.dart:279)
+<asynchronous suspension>
+#9      AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142)
+<asynchronous suspension>
+#10     _rootRun (dart:async/zone.dart:1126)
+#11     _CustomZone.run (dart:async/zone.dart:1023)
+#12     runZoned (dart:async/zone.dart:1501)
+#13     AppContext.run (package:flutter_tools/src/base/context.dart:141)
+<asynchronous suspension>
+#14     FlutterCommand.run (package:flutter_tools/src/runner/flutter_command.dart:270)
+#15     CommandRunner.runCommand (package:args/command_runner.dart:194)
+<asynchronous suspension>
+#16     FlutterCommandRunner.runCommand.<anonymous closure> (package:flutter_tools/src/runner/flutter_command_runner.dart:309)
+<asynchronous suspension>
+#17     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142)
+<asynchronous suspension>
+#18     _rootRun (dart:async/zone.dart:1126)
+#19     _CustomZone.run (dart:async/zone.dart:1023)
+#20     runZoned (dart:async/zone.dart:1501)
+#21     AppContext.run (package:flutter_tools/src/base/context.dart:141)
+<asynchronous suspension>
+#22     FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:265)
+<asynchronous suspension>
+#23     CommandRunner.run.<anonymous closure> (package:args/command_runner.dart:109)
+#24     new Future.sync (dart:async/future.dart:222)
+#25     CommandRunner.run (package:args/command_runner.dart:109)
+#26     FlutterCommandRunner.run (package:flutter_tools/src/runner/flutter_command_runner.dart:174)
+#27     run.<anonymous closure> (package:flutter_tools/runner.dart:59)
+<asynchronous suspension>
+#28     AppContext.run.<anonymous closure> (package:flutter_tools/src/base/context.dart:142)
+<asynchronous suspension>
+#29     _rootRun (dart:async/zone.dart:1126)
+#30     _CustomZone.run (dart:async/zone.dart:1023)
+#31     runZoned (dart:async/zone.dart:1501)
+#32     AppContext.run (package:flutter_tools/src/base/context.dart:141)
+<asynchronous suspension>
+#33     runInContext (package:flutter_tools/src/context_runner.dart:43)
+<asynchronous suspension>
+#34     run (package:flutter_tools/runner.dart:50)
+#35     main (package:flutter_tools/executable.dart:49)
+<asynchronous suspension>
+#36     main (file:///Users/davidcheah/Desktop/Flutter_SDK/flutter/packages/flutter_tools/bin/flutter_tools.dart:8)
+#37     _startIsolate.<anonymous closure> (dart:isolate-patch/dart:isolate/isolate_patch.dart:277)
+#38     _RawReceivePortImpl._handleMessage (dart:isolate-patch/dart:isolate/isolate_patch.dart:165)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (Channel beta, v0.5.1, on Mac OS X 10.13.6 17G65, locale en-SG)
+    • Flutter version 0.5.1 at /Users/davidcheah/Desktop/Flutter_SDK/flutter
+    • Framework revision c7ea3ca377 (3 months ago), 2018-05-29 21:07:33 +0200
+    • Engine revision 1ed25ca7b7
+    • Dart version 2.0.0-dev.58.0.flutter-f981f09760
+
+[✓] Android toolchain - develop for Android devices (Android SDK 27.0.3)
+    • Android SDK at /Users/davidcheah/Library/Android/sdk
+    • Android NDK location not configured (optional; useful for native profiling support)
+    • Platform android-27, build-tools 27.0.3
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b01)
+    • All Android licenses accepted.
+
+[✓] iOS toolchain - develop for iOS devices (Xcode 9.4.1)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 9.4.1, Build version 9F2000
+    • ios-deploy 1.9.2
+    • CocoaPods version 1.5.2
+
+[✓] Android Studio (version 3.1)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Flutter plugin version 24.2.1
+    • Dart plugin version 173.4700
+    • Java version OpenJDK Runtime Environment (build 1.8.0_152-release-1024-b01)
+
+[✓] Connected devices (1 available)
+    • Android SDK built for x86 • emulator-5554 • android-x86 • Android 8.1.0 (API 27) (emulator)
+
+• No issues found!
+```

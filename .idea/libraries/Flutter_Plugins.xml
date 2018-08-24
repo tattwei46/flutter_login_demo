@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Flutter Plugins" type="FlutterPluginsLibraryType">
+    <CLASSES>
+      <root url="file://$PROJECT_DIR$/../../Flutter_SDK/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.5.19" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

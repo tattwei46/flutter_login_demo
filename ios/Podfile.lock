@@ -1,0 +1,73 @@
+PODS:
+  - Firebase/Auth (5.0.0):
+    - Firebase/CoreOnly
+    - FirebaseAuth (= 5.0.0)
+  - Firebase/Core (5.0.0):
+    - Firebase/CoreOnly
+    - FirebaseAnalytics (= 5.0.0)
+  - Firebase/CoreOnly (5.0.0):
+    - FirebaseCore (= 5.0.0)
+  - firebase_auth (0.0.1):
+    - Firebase/Auth
+    - Firebase/Core
+    - Flutter
+  - FirebaseAnalytics (5.0.0):
+    - FirebaseCore (~> 5.0)
+    - FirebaseInstanceID (~> 3.0)
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+    - nanopb (~> 0.3)
+  - FirebaseAuth (5.0.0):
+    - FirebaseCore (~> 5.0)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseCore (5.0.0):
+    - "GoogleToolboxForMac/NSData+zlib (~> 2.1)"
+  - FirebaseInstanceID (3.0.0):
+    - FirebaseCore (~> 5.0)
+  - Flutter (1.0.0)
+  - GoogleToolboxForMac/Defines (2.1.4)
+  - "GoogleToolboxForMac/NSData+zlib (2.1.4)":
+    - GoogleToolboxForMac/Defines (= 2.1.4)
+  - GTMSessionFetcher/Core (1.1.15)
+  - nanopb (0.3.8):
+    - nanopb/decode (= 0.3.8)
+    - nanopb/encode (= 0.3.8)
+  - nanopb/decode (0.3.8)
+  - nanopb/encode (0.3.8)
+
+DEPENDENCIES:
+  - Firebase/Core
+  - firebase_auth (from `.symlinks/plugins/firebase_auth/ios`)
+  - Flutter (from `.symlinks/flutter/ios`)
+
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Firebase
+    - FirebaseAnalytics
+    - FirebaseAuth
+    - FirebaseCore
+    - FirebaseInstanceID
+    - GoogleToolboxForMac
+    - GTMSessionFetcher
+    - nanopb
+
+EXTERNAL SOURCES:
+  firebase_auth:
+    :path: ".symlinks/plugins/firebase_auth/ios"
+  Flutter:
+    :path: ".symlinks/flutter/ios"
+
+SPEC CHECKSUMS:
+  Firebase: 4bd804448ab2596794698773d41520a0af101e65
+  firebase_auth: 27a5a77a032d557c18f8e223aaf8ec1368f6cdbc
+  FirebaseAnalytics: 19812b49fa5f283dd6b23edf8a14b5d477029ab8
+  FirebaseAuth: acbeef02fe7c3a26624e309849f3fe30c84115af
+  FirebaseCore: e46e4babb9de298fb2f736958edcc6da1dc60d73
+  FirebaseInstanceID: 83e0040351565df711a5db3d8ebe5ea21aca998a
+  Flutter: 9d0fac939486c9aba2809b7982dfdbb47a7b0296
+  GoogleToolboxForMac: 91c824d21e85b31c2aae9bb011c5027c9b4e738f
+  GTMSessionFetcher: 5fa5b80fd20e439ef5f545fb2cb3ca6c6714caa2
+  nanopb: 5601e6bca2dbf1ed831b519092ec110f66982ca3
+
+PODFILE CHECKSUM: 23366efbf5a76a9e0f2df7eaba071cbf619a0bf2
+
+COCOAPODS: 1.5.2
