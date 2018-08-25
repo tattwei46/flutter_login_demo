@@ -1,4 +1,0 @@
-#Fri Aug 24 23:22:25 SGT 2018
-base.0=/Users/davidcheah/Desktop/DavidCheah/flutter_login_demo/build/app/intermediates/transforms/dexMerger/debug/0
-path.0=classes.dex
-renamed.0=classes.dex
