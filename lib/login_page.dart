@@ -3,21 +3,21 @@ import 'auth.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({this.auth, this.onSignedIn});
-  final BaseAuth auth;
+  final AuthImpl auth;
   final VoidCallback onSignedIn;
 
   @override
   State<StatefulWidget> createState() => new _LoginPageState();
 }
 
-enum FormType { LOGIN, REGISTER }
+enum FormMode { SIGNIN, SIGNUP}
 
 class _LoginPageState extends State<LoginPage> {
   final formKey = new GlobalKey<FormState>();
 
   String _email;
   String _password;
-  FormType _formType = FormType.LOGIN;
+  FormMode _formMode = FormMode.SIGNIN;
 
   bool validateAndSave() {
     final form = formKey.currentState;
@@ -31,14 +31,14 @@ class _LoginPageState extends State<LoginPage> {
   void validateAndSubmit() async {
     if (validateAndSave()) {
       try {
-        if (_formType == FormType.LOGIN) {
+        if (_formMode == FormMode.SIGNIN) {
           String userId =
-              await widget.auth.signInWithEmailAndPassword(_email, _password);
+              await widget.auth.signIn(_email, _password);
           print('Signed in: $userId');
         } else {
           String userId = await widget.auth
-              .createUserWithEmailAndPassword(_email, _password);
-          print('Registered user: $userId');
+              .signUp(_email, _password);
+          print('Signed up user: $userId');
         }
         widget.onSignedIn();
       } catch (e) {
@@ -47,17 +47,17 @@ class _LoginPageState extends State<LoginPage> {
     }
   }
 
-  void switchRegisterMode() {
+  void _signUp() {
     formKey.currentState.reset();
     setState(() {
-      _formType = FormType.REGISTER;
+      _formMode = FormMode.SIGNUP;
     });
   }
 
-  void switchLoginMode() {
+  void _signIn() {
     formKey.currentState.reset();
     setState(() {
-      _formType = FormType.LOGIN;
+      _formMode = FormMode.SIGNIN;
     });
   }
 
@@ -135,13 +135,13 @@ class _LoginPageState extends State<LoginPage> {
   }
 
   Widget _label() {
-    if (_formType == FormType.LOGIN) {
+    if (_formMode == FormMode.SIGNIN) {
       return
         new FlatButton(
           child: new Text('Create an account',
               style:
                   new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
-          onPressed: switchRegisterMode,
+          onPressed: _signIn,
         );
     } else {
       return
@@ -149,12 +149,12 @@ class _LoginPageState extends State<LoginPage> {
           child: new Text('Have an account? Sign in',
               style:
                   new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
-          onPressed: switchLoginMode,
+          onPressed: _signUp,
         );
     }
   }
   Widget _submitButton() {
-    if (_formType == FormType.LOGIN) {
+    if (_formMode == FormMode.SIGNIN) {
       return
         new Padding(
             padding: EdgeInsets.symmetric(vertical: 16.0),

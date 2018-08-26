@@ -5,7 +5,7 @@ import 'home_page.dart';
 
 class RootPage extends StatefulWidget {
   RootPage({this.auth});
-  final BaseAuth auth;
+  final AuthImpl auth;
 
   @override
   State<StatefulWidget> createState() => new _RootPageState();
@@ -22,7 +22,7 @@ class _RootPageState extends State<RootPage> {
 
   initState() {
     super.initState();
-    widget.auth.currentUser().then((userId) {
+    widget.auth.getCurrentUser().then((userId) {
       setState(() {
         authStatus = userId == null ? AuthStatus.NOT_SIGNED_IN : AuthStatus.SIGNED_IN;
       });

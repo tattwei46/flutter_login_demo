@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'auth.dart';
 class HomePage extends StatelessWidget {
   HomePage({this.auth, this.onSignedOut});
-  final BaseAuth auth;
+  final AuthImpl auth;
   final VoidCallback onSignedOut;
 
   void _signOut() async {
