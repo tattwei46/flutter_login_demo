@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'auth.dart';
+import 'package:flutter_login_demo/auth.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({this.auth, this.onSignedIn});
@@ -141,7 +141,7 @@ class _LoginPageState extends State<LoginPage> {
           child: new Text('Create an account',
               style:
                   new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
-          onPressed: _signIn,
+          onPressed: _signUp,
         );
     } else {
       return
@@ -149,7 +149,7 @@ class _LoginPageState extends State<LoginPage> {
           child: new Text('Have an account? Sign in',
               style:
                   new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
-          onPressed: _signUp,
+          onPressed: _signIn,
         );
     }
   }

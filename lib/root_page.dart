@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'login_page.dart';
-import 'auth.dart';
-import 'home_page.dart';
+import 'package:flutter_login_demo/login_page.dart';
+import 'package:flutter_login_demo/auth.dart';
+import 'package:flutter_login_demo/home_page.dart';
 
 class RootPage extends StatefulWidget {
   RootPage({this.auth});
@@ -12,13 +12,14 @@ class RootPage extends StatefulWidget {
 }
 
 enum AuthStatus {
+  NOT_DETERMINED,
   NOT_SIGNED_IN,
   SIGNED_IN,
 }
 
 class _RootPageState extends State<RootPage> {
 
-  AuthStatus authStatus = AuthStatus.NOT_SIGNED_IN;
+  AuthStatus authStatus = AuthStatus.NOT_DETERMINED;
 
   initState() {
     super.initState();
@@ -41,9 +42,20 @@ class _RootPageState extends State<RootPage> {
     });
   }
 
+  Widget _buildWaitingScreen() {
+    return Scaffold(
+      body: Container(
+        alignment: Alignment.center,
+        child: CircularProgressIndicator(),
+      ),
+    );
+  }
+
   @override
   Widget build(BuildContext context) {
     switch (authStatus) {
+      case AuthStatus.NOT_DETERMINED:
+        //return _buildWaitingScreen();
       case AuthStatus.NOT_SIGNED_IN:
         return new LoginPage(
           auth: widget.auth,
