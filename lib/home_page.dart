@@ -33,14 +33,13 @@ class _HomePageState extends State<HomePage> {
   }
 
   void _onEntryChanged(Event event) {
-    var oldEntry = todoList.singleWhere((entry){
+    var oldEntry = todoList.singleWhere((entry) {
       return entry.key == event.snapshot.key;
     });
 
     setState(() {
-          todoList[todoList.indexOf(oldEntry)] =
-            Todo.fromSnapshot(event.snapshot);
-        });
+      todoList[todoList.indexOf(oldEntry)] = Todo.fromSnapshot(event.snapshot);
+    });
   }
 
   void _onEntryAdded(Event event) {
@@ -130,16 +129,15 @@ class _HomePageState extends State<HomePage> {
                     Animation<double> animation, int index) {
                   return new Card(
                     child: ListTile(
-                      leading: CircleAvatar(
-                        backgroundColor: Colors.red,
-                      ),
-                      title: Text(
-                        todoList[index].subject,
-                      ),
-                      onTap: () {
-                        print(todoList[index].subject);
-                      }
-                    ),
+                        leading: CircleAvatar(
+                          backgroundColor: Colors.red,
+                        ),
+                        title: Text(
+                          todoList[index].subject,
+                        ),
+                        onTap: () {
+                          print(todoList[index].subject);
+                        }),
                   );
                 },
               ),

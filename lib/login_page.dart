@@ -3,6 +3,7 @@ import 'package:flutter_login_demo/auth.dart';
 
 class LoginPage extends StatefulWidget {
   LoginPage({this.auth, this.onSignedIn});
+
   final AuthImpl auth;
   final VoidCallback onSignedIn;
 
@@ -10,7 +11,7 @@ class LoginPage extends StatefulWidget {
   State<StatefulWidget> createState() => new _LoginPageState();
 }
 
-enum FormMode { SIGNIN, SIGNUP}
+enum FormMode { SIGNIN, SIGNUP }
 
 class _LoginPageState extends State<LoginPage> {
   final formKey = new GlobalKey<FormState>();
@@ -32,12 +33,10 @@ class _LoginPageState extends State<LoginPage> {
     if (validateAndSave()) {
       try {
         if (_formMode == FormMode.SIGNIN) {
-          String userId =
-              await widget.auth.signIn(_email, _password);
+          String userId = await widget.auth.signIn(_email, _password);
           print('Signed in: $userId');
         } else {
-          String userId = await widget.auth
-              .signUp(_email, _password);
+          String userId = await widget.auth.signUp(_email, _password);
           print('Signed up user: $userId');
         }
         widget.onSignedIn();
@@ -105,89 +104,81 @@ class _LoginPageState extends State<LoginPage> {
 
   Widget _emailInput() {
     return new TextFormField(
-          keyboardType: TextInputType.emailAddress,
-          autofocus: false,
-          decoration: new InputDecoration(
-              hintText: 'Email',
-              icon: new Icon(
-                Icons.mail,
-                color: Colors.grey,
-              )),
-          validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
-          onSaved: (value) => _email = value,
-        );
+      keyboardType: TextInputType.emailAddress,
+      autofocus: false,
+      decoration: new InputDecoration(
+          hintText: 'Email',
+          icon: new Icon(
+            Icons.mail,
+            color: Colors.grey,
+          )),
+      validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
+      onSaved: (value) => _email = value,
+    );
   }
 
   Widget _passwordInput() {
     return new TextFormField(
-          obscureText: true,
-          autofocus: false,
-          decoration: new InputDecoration(
-              hintText: 'Password',
-              icon: new Icon(
-                Icons.lock,
-                color: Colors.grey,
-              )),
-          validator: (value) =>
-              value.isEmpty ? 'Password can\'t be empty' : null,
-          onSaved: (value) => _password = value,
-        );
+      obscureText: true,
+      autofocus: false,
+      decoration: new InputDecoration(
+          hintText: 'Password',
+          icon: new Icon(
+            Icons.lock,
+            color: Colors.grey,
+          )),
+      validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
+      onSaved: (value) => _password = value,
+    );
   }
 
   Widget _label() {
     if (_formMode == FormMode.SIGNIN) {
-      return
-        new FlatButton(
-          child: new Text('Create an account',
-              style:
-                  new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
-          onPressed: _signUp,
-        );
+      return new FlatButton(
+        child: new Text('Create an account',
+            style: new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
+        onPressed: _signUp,
+      );
     } else {
-      return
-        new FlatButton(
-          child: new Text('Have an account? Sign in',
-              style:
-                  new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
-          onPressed: _signIn,
-        );
+      return new FlatButton(
+        child: new Text('Have an account? Sign in',
+            style: new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
+        onPressed: _signIn,
+      );
     }
   }
+
   Widget _submitButton() {
     if (_formMode == FormMode.SIGNIN) {
-      return
-        new Padding(
-            padding: EdgeInsets.symmetric(vertical: 16.0),
-            child: new Material(
-                borderRadius: BorderRadius.circular(30.0),
-                shadowColor: Colors.blueAccent.shade100,
-                elevation: 5.0,
-                child: new MaterialButton(
-                  minWidth: 200.0,
-                  height: 42.0,
-                  color: Colors.blue,
-                  child: new Text('Login',
-                      style:
-                          new TextStyle(fontSize: 20.0, color: Colors.white)),
-                  onPressed: validateAndSubmit,
-                )));
+      return new Padding(
+          padding: EdgeInsets.symmetric(vertical: 16.0),
+          child: new Material(
+              borderRadius: BorderRadius.circular(30.0),
+              shadowColor: Colors.blueAccent.shade100,
+              elevation: 5.0,
+              child: new MaterialButton(
+                minWidth: 200.0,
+                height: 42.0,
+                color: Colors.blue,
+                child: new Text('Login',
+                    style: new TextStyle(fontSize: 20.0, color: Colors.white)),
+                onPressed: validateAndSubmit,
+              )));
     } else {
-      return 
-        new Padding(
-            padding: EdgeInsets.symmetric(vertical: 16.0),
-            child: new Material(
-                borderRadius: BorderRadius.circular(30.0),
-                shadowColor: Colors.lightBlueAccent.shade100,
-                elevation: 5.0,
-                child: new MaterialButton(
-                  minWidth: 200.0,
-                  height: 42.0,
-                  color: Colors.blue,
-                  child: new Text('Create account',
-                      style:
-                          new TextStyle(fontSize: 20.0, color: Colors.white)),
-                  onPressed: validateAndSubmit,
-                )));
+      return new Padding(
+          padding: EdgeInsets.symmetric(vertical: 16.0),
+          child: new Material(
+              borderRadius: BorderRadius.circular(30.0),
+              shadowColor: Colors.lightBlueAccent.shade100,
+              elevation: 5.0,
+              child: new MaterialButton(
+                minWidth: 200.0,
+                height: 42.0,
+                color: Colors.blue,
+                child: new Text('Create account',
+                    style: new TextStyle(fontSize: 20.0, color: Colors.white)),
+                onPressed: validateAndSubmit,
+              )));
     }
   }
 }
