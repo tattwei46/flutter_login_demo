@@ -5,6 +5,7 @@ import 'package:flutter_login_demo/home_page.dart';
 
 class RootPage extends StatefulWidget {
   RootPage({this.auth});
+
   final AuthImpl auth;
 
   @override
@@ -18,14 +19,15 @@ enum AuthStatus {
 }
 
 class _RootPageState extends State<RootPage> {
-
   AuthStatus authStatus = AuthStatus.NOT_DETERMINED;
 
-  initState() {
+  @override
+  void initState() {
     super.initState();
-    widget.auth.getCurrentUser().then((userId) {
+    widget.auth.getCurrentUser().then((user) {
       setState(() {
-        authStatus = userId == null ? AuthStatus.NOT_SIGNED_IN : AuthStatus.SIGNED_IN;
+        authStatus =
+            user?.uid == null ? AuthStatus.NOT_SIGNED_IN : AuthStatus.SIGNED_IN;
       });
     });
   }
@@ -55,7 +57,7 @@ class _RootPageState extends State<RootPage> {
   Widget build(BuildContext context) {
     switch (authStatus) {
       case AuthStatus.NOT_DETERMINED:
-        //return _buildWaitingScreen();
+      //return _buildWaitingScreen();
       case AuthStatus.NOT_SIGNED_IN:
         return new LoginPage(
           auth: widget.auth,
