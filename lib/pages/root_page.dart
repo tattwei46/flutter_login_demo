@@ -14,8 +14,8 @@ class RootPage extends StatefulWidget {
 
 enum AuthStatus {
   NOT_DETERMINED,
-  NOT_SIGNED_IN,
-  SIGNED_IN,
+  NOT_LOGGED_IN,
+  LOGGED_IN,
 }
 
 class _RootPageState extends State<RootPage> {
@@ -27,20 +27,20 @@ class _RootPageState extends State<RootPage> {
     widget.auth.getCurrentUser().then((user) {
       setState(() {
         authStatus =
-            user?.uid == null ? AuthStatus.NOT_SIGNED_IN : AuthStatus.SIGNED_IN;
+            user?.uid == null ? AuthStatus.NOT_LOGGED_IN : AuthStatus.LOGGED_IN;
       });
     });
   }
 
-  void _onSignedIn() {
+  void _onLoggedIn() {
     setState(() {
-      authStatus = AuthStatus.SIGNED_IN;
+      authStatus = AuthStatus.LOGGED_IN;
     });
   }
 
   void _onSignedOut() {
     setState(() {
-      authStatus = AuthStatus.NOT_SIGNED_IN;
+      authStatus = AuthStatus.NOT_LOGGED_IN;
     });
   }
 
@@ -59,13 +59,13 @@ class _RootPageState extends State<RootPage> {
       case AuthStatus.NOT_DETERMINED:
         return _buildWaitingScreen();
         break;
-      case AuthStatus.NOT_SIGNED_IN:
+      case AuthStatus.NOT_LOGGED_IN:
         return new LoginSignUpPage(
           auth: widget.auth,
-          onSignedIn: _onSignedIn,
+          onSignedIn: _onLoggedIn,
         );
         break;
-      case AuthStatus.SIGNED_IN:
+      case AuthStatus.LOGGED_IN:
         return new HomePage(
           auth: widget.auth,
           onSignedOut: _onSignedOut,
