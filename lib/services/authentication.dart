@@ -1,7 +1,7 @@
 import 'dart:async';
 import 'package:firebase_auth/firebase_auth.dart';
 
-abstract class AuthImpl {
+abstract class BaseAuth {
   Future<String> signIn(String email, String password);
 
   Future<String> signUp(String email, String password);
@@ -11,7 +11,7 @@ abstract class AuthImpl {
   Future<void> signOut();
 }
 
-class Auth implements AuthImpl {
+class Auth implements BaseAuth {
   final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
 
   Future<String> signIn(String email, String password) async {

@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_login_demo/pages/login_page.dart';
-import 'package:flutter_login_demo/services/auth.dart';
+import 'package:flutter_login_demo/pages/login_signup_page.dart';
+import 'package:flutter_login_demo/services/authentication.dart';
 import 'package:flutter_login_demo/pages/home_page.dart';
 
 class RootPage extends StatefulWidget {
   RootPage({this.auth});
 
-  final AuthImpl auth;
+  final BaseAuth auth;
 
   @override
   State<StatefulWidget> createState() => new _RootPageState();
@@ -32,13 +32,13 @@ class _RootPageState extends State<RootPage> {
     });
   }
 
-  void _signedIn() {
+  void _onSignedIn() {
     setState(() {
       authStatus = AuthStatus.SIGNED_IN;
     });
   }
 
-  void _signedOut() {
+  void _onSignedOut() {
     setState(() {
       authStatus = AuthStatus.NOT_SIGNED_IN;
     });
@@ -57,17 +57,23 @@ class _RootPageState extends State<RootPage> {
   Widget build(BuildContext context) {
     switch (authStatus) {
       case AuthStatus.NOT_DETERMINED:
-      //return _buildWaitingScreen();
+        return _buildWaitingScreen();
+        break;
       case AuthStatus.NOT_SIGNED_IN:
-        return new LoginPage(
+        return new LoginSignUpPage(
           auth: widget.auth,
-          onSignedIn: _signedIn,
+          onSignedIn: _onSignedIn,
         );
+        break;
       case AuthStatus.SIGNED_IN:
         return new HomePage(
           auth: widget.auth,
-          onSignedOut: _signedOut,
+          onSignedOut: _onSignedOut,
         );
+        break;
+      default:
+        return _buildWaitingScreen();
+        break;
     }
   }
 }
