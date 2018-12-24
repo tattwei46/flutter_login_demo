@@ -18,9 +18,12 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
 
   String _email;
   String _password;
+  String _errorMessage;
 
   // Initial form is login form
   FormMode _formMode = FormMode.LOGIN;
+  bool _isIos;
+  bool _isLoading;
 
   // Check if form is valid before perform login or signup
   bool validateAndSave() {
@@ -34,24 +37,47 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
 
   // Perform login or signup
   validateAndSubmit() async {
+    setState(() {
+      _errorMessage = "";
+      _isLoading = true;
+    });
     if (validateAndSave()) {
+      String userId = "";
       try {
         if (_formMode == FormMode.LOGIN) {
-          String userId = await widget.auth.signIn(_email, _password);
+          userId = await widget.auth.signIn(_email, _password);
           print('Signed in: $userId');
         } else {
-          String userId = await widget.auth.signUp(_email, _password);
+          userId = await widget.auth.signUp(_email, _password);
           print('Signed up user: $userId');
         }
-        widget.onSignedIn();
+        _isLoading = false;
+        if (userId.length > 0 && userId != null) {
+          widget.onSignedIn();
+        }
       } catch (e) {
         print('Error: $e');
+        setState(() {
+          _isLoading = false;
+          if (_isIos) {
+            _errorMessage = e.details;
+          } else
+            _errorMessage = e.message;
+        });
       }
     }
   }
 
+  @override
+  void initState() {
+    _errorMessage = "";
+    _isLoading = false;
+    super.initState();
+  }
+
   void _changeFormToSignUp() {
     formKey.currentState.reset();
+    _errorMessage = "";
     setState(() {
       _formMode = FormMode.SIGNUP;
     });
@@ -59,6 +85,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
 
   void _changeFormToLogin() {
     formKey.currentState.reset();
+    _errorMessage = "";
     setState(() {
       _formMode = FormMode.LOGIN;
     });
@@ -66,25 +93,60 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
 
   @override
   Widget build(BuildContext context) {
+    _isIos = Theme.of(context).platform == TargetPlatform.iOS;
     return new Scaffold(
         appBar: new AppBar(
           title: new Text('Flutter login demo'),
         ),
-        body: new Container(
-            padding: EdgeInsets.all(16.0),
-            child: new Form(
-              key: formKey,
-              child: new ListView(
-                shrinkWrap: true,
-                children: <Widget>[
-                  _showLogo(),
-                  _showEmailInput(),
-                  _showPasswordInput(),
-                  _showPrimaryButton(),
-                  _showSecondaryButton(),
-                ],
-              ),
-            )));
+        body: Stack(
+          children: <Widget>[
+            _showBody(),
+            _showCircularProgress(),
+          ],
+        ));
+  }
+
+  Widget _showCircularProgress(){
+    if (_isLoading) {
+      return Center(child: CircularProgressIndicator());
+    } return Container(height: 0.0, width: 0.0,);
+
+  }
+
+  Widget _showBody(){
+    return new Container(
+        padding: EdgeInsets.all(16.0),
+        child: new Form(
+          key: formKey,
+          child: new ListView(
+            shrinkWrap: true,
+            children: <Widget>[
+              _showLogo(),
+              _showEmailInput(),
+              _showPasswordInput(),
+              _showPrimaryButton(),
+              _showSecondaryButton(),
+              _showErrorMessage(),
+            ],
+          ),
+        ));
+  }
+
+  Widget _showErrorMessage() {
+    if (_errorMessage.length > 0 && _errorMessage != null) {
+      return new Text(
+        _errorMessage,
+        style: TextStyle(
+            fontSize: 13.0,
+            color: Colors.red,
+            height: 1.0,
+            fontWeight: FontWeight.w300),
+      );
+    } else {
+      return new Container(
+        height: 0.0,
+      );
+    }
   }
 
   Widget _showLogo() {
@@ -105,6 +167,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(0.0, 100.0, 0.0, 0.0),
       child: new TextFormField(
+        maxLines: 1,
         keyboardType: TextInputType.emailAddress,
         autofocus: false,
         decoration: new InputDecoration(
@@ -123,6 +186,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
     return Padding(
       padding: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
       child: new TextFormField(
+        maxLines: 1,
         obscureText: true,
         autofocus: false,
         decoration: new InputDecoration(
@@ -138,13 +202,17 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
   }
 
   Widget _showSecondaryButton() {
-      return new FlatButton(
-        child: _formMode == FormMode.LOGIN? new Text('Create an account',
-            style: new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300))
-        : new Text('Have an account? Sign in',
-            style: new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
-        onPressed: _formMode == FormMode.LOGIN? _changeFormToSignUp : _changeFormToLogin,
-      );
+    return new FlatButton(
+      child: _formMode == FormMode.LOGIN
+          ? new Text('Create an account',
+              style: new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300))
+          : new Text('Have an account? Sign in',
+              style:
+                  new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
+      onPressed: _formMode == FormMode.LOGIN
+          ? _changeFormToSignUp
+          : _changeFormToLogin,
+    );
   }
 
   Widget _showPrimaryButton() {
