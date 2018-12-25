@@ -101,6 +101,7 @@ class _HomePageState extends State<HomePage> {
   }
 
   _showDialog(BuildContext context) async {
+    _textEditingController.clear();
     await showDialog<String>(
         context: context,
       builder: (BuildContext context) {
