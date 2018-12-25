@@ -2,36 +2,56 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login_demo/services/authentication.dart';
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
-import 'dart:async';
 import 'package:flutter_login_demo/models/todo.dart';
+import 'dart:async';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.auth, this.onSignedOut}) : super(key: key);
+  HomePage({Key key, this.auth, this.userId, this.onSignedOut})
+      : super(key: key);
 
   final BaseAuth auth;
   final VoidCallback onSignedOut;
+  final String userId;
 
   @override
   State<StatefulWidget> createState() => new _HomePageState();
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Todo> todoList = List();
+  List<Todo> todoList;
   Todo todo;
-  String userId;
 
   final FirebaseDatabase database = FirebaseDatabase.instance;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
   DatabaseReference databaseReference;
 
+  final _textEditingController = TextEditingController();
+  StreamSubscription<Event> _onTodoAddedSubscription;
+  StreamSubscription<Event> _onTodoChangedSubscription;
+
+  Query _todoQuery;
+
+
   @override
   void initState() {
     super.initState();
-    todo = Todo("");
-    databaseReference = database.reference().child("todo");
-    databaseReference.onChildAdded.listen(_onEntryAdded);
-    databaseReference.onChildChanged.listen(_onEntryChanged);
+    todoList = new List();
+    _todoQuery = database
+        .reference()
+        .child("todo")
+        .orderByChild("userId")
+        .equalTo(widget.userId);
+    _onTodoAddedSubscription = _todoQuery.onChildAdded.listen(_onEntryAdded);
+    _onTodoChangedSubscription = _todoQuery.onChildChanged.listen(_onEntryChanged);
   }
+
+  @override
+  void dispose() {
+    _onTodoAddedSubscription.cancel();
+    _onTodoChangedSubscription.cancel();
+    super.dispose();
+  }
+
 
   void _onEntryChanged(Event event) {
     var oldEntry = todoList.singleWhere((entry) {
@@ -58,30 +78,100 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  void _writeData() {
-    database.reference().child("message").set({"first": "David"});
+
+  void addNewTodo(String todoItem) {
+    if (todoItem.length > 0) {
+
+      Todo todo = new Todo(todoItem.toString(), widget.userId, false);
+      database.reference().child("todo").push().set(todo.toJson());
+    }
   }
 
-  void _readData() {
-    setState(() {
-      Completer<String> completer = new Completer<String>();
-      database
-          .reference()
-          .child("message")
-          .once()
-          .then((DataSnapshot snapshot) {
-        Map<dynamic, dynamic> list = snapshot.value;
-        print("Values from db is ${list.values}");
-      });
+  updateTodo(Todo todo){
+    //Toggle completed
+    todo.completed = !todo.completed;
+    if (todo != null) {
+      database.reference().child("todo").child(todo.key).set(todo.toJson());
+    }
+  }
+
+  void deleteTodo(String todoId) {
+    database.reference().child("todo").child(todoId).remove().then((_) {
+      print("Delete $todoId successful");
     });
   }
 
-  void handleSubmit() {
-    final FormState form = formKey.currentState;
-    if (form.validate()) {
-      form.save();
-      form.reset();
-      databaseReference.push().set(todo.toJson());
+  _showDialog(BuildContext context) async {
+    await showDialog<String>(
+        context: context,
+      builder: (BuildContext context) {
+          return AlertDialog(
+            content: new Row(
+              children: <Widget>[
+                new Expanded(child: new TextField(
+                  controller: _textEditingController,
+                  autofocus: true,
+                  decoration: new InputDecoration(
+                    labelText: 'Add new todo',
+                  ),
+                ))
+              ],
+            ),
+            actions: <Widget>[
+              new FlatButton(
+                  child: const Text('Cancel'),
+                  onPressed: () {
+                    Navigator.pop(context);
+                  }),
+              new FlatButton(
+                  child: const Text('Save'),
+                  onPressed: () {
+                    addNewTodo(_textEditingController.text.toString());
+                    Navigator.pop(context);
+                  })
+            ],
+          );
+      }
+    );
+  }
+
+  Widget showTodoList() {
+    if (todoList.length > 0) {
+      return ListView.builder(
+          shrinkWrap: true,
+          itemCount: todoList.length,
+          itemBuilder: (BuildContext context, int index) {
+            String todoId = todoList[index].key;
+            String subject = todoList[index].subject;
+            bool completed = todoList[index].completed;
+            String userId = todoList[index].userId;
+            return Dismissible(
+              key: Key(todoId),
+              background: Container(color: Colors.red),
+              onDismissed: (direction) async {
+                deleteTodo(todoId);
+              },
+              child: ListTile(
+                title: Text(
+                  subject,
+                  style: TextStyle(fontSize: 20.0),
+                ),
+                trailing: IconButton(
+                    icon: (completed)
+                        ? Icon(
+                      Icons.done_outline,
+                      color: Colors.green,
+                      size: 20.0,
+                    )
+                        : Icon(Icons.done, color: Colors.grey, size: 20.0),
+                    onPressed: () {
+                      updateTodo(todoList[index]);
+                    }),
+              ),
+            );
+          });
+    } else {
+      return Center(child: Text("Empty"));
     }
   }
 
@@ -97,53 +187,14 @@ class _HomePageState extends State<HomePage> {
                 onPressed: _signOut)
           ],
         ),
-        body: Column(
-          children: <Widget>[
-            Flexible(
-              flex: 0,
-              child: Form(
-                key: formKey,
-                child: Flex(
-                  direction: Axis.vertical,
-                  children: <Widget>[
-                    ListTile(
-                        leading: Icon(Icons.subject),
-                        title: TextFormField(
-                          initialValue: "",
-                          onSaved: (val) => todo.subject = val,
-                          validator: (val) => val == "" ? val : null,
-                        )),
-                    FlatButton(
-                        child: Text("Post"),
-                        color: Colors.redAccent,
-                        onPressed: () {
-                          handleSubmit();
-                        })
-                  ],
-                ),
-              ),
-            ),
-            Flexible(
-              child: FirebaseAnimatedList(
-                query: databaseReference,
-                itemBuilder: (_, DataSnapshot snapshot,
-                    Animation<double> animation, int index) {
-                  return new Card(
-                    child: ListTile(
-                        leading: CircleAvatar(
-                          backgroundColor: Colors.red,
-                        ),
-                        title: Text(
-                          todoList[index].subject,
-                        ),
-                        onTap: () {
-                          print(todoList[index].subject);
-                        }),
-                  );
-                },
-              ),
-            ),
-          ],
-        ));
+        body: showTodoList(),
+        floatingActionButton: FloatingActionButton(
+          onPressed: () {
+            _showDialog(context);
+          },
+          tooltip: 'Increment',
+          child: Icon(Icons.add),
+        )
+    );
   }
 }
