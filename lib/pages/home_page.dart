@@ -74,7 +74,7 @@ class _HomePageState extends State<HomePage> {
       print(e);
     }
   }
-  
+
   addNewTodo(String todoItem) {
     if (todoItem.length > 0) {
 
@@ -91,9 +91,12 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  deleteTodo(String todoId) {
+  deleteTodo(String todoId, int index) {
     database.reference().child("todo").child(todoId).remove().then((_) {
       print("Delete $todoId successful");
+      setState(() {
+        todoList.removeAt(index);
+      });
     });
   }
 
@@ -145,7 +148,7 @@ class _HomePageState extends State<HomePage> {
               key: Key(todoId),
               background: Container(color: Colors.red),
               onDismissed: (direction) async {
-                deleteTodo(todoId);
+                deleteTodo(todoId, index);
               },
               child: ListTile(
                 title: Text(
