@@ -51,7 +51,6 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
           userId = await widget.auth.signUp(_email, _password);
           print('Signed up user: $userId');
         }
-        _isLoading = false;
         if (userId.length > 0 && userId != null) {
           widget.onSignedIn();
         }

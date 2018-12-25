@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_login_demo/services/authentication.dart';
 import 'package:firebase_database/firebase_database.dart';
-import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter_login_demo/models/todo.dart';
 import 'dart:async';
 
@@ -31,7 +30,6 @@ class _HomePageState extends State<HomePage> {
 
   Query _todoQuery;
 
-
   @override
   void initState() {
     super.initState();
@@ -52,8 +50,7 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-
-  void _onEntryChanged(Event event) {
+  _onEntryChanged(Event event) {
     var oldEntry = todoList.singleWhere((entry) {
       return entry.key == event.snapshot.key;
     });
@@ -63,13 +60,13 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  void _onEntryAdded(Event event) {
+  _onEntryAdded(Event event) {
     setState(() {
       todoList.add(Todo.fromSnapshot(event.snapshot));
     });
   }
 
-  void _signOut() async {
+  _signOut() async {
     try {
       await widget.auth.signOut();
       widget.onSignedOut();
@@ -77,9 +74,8 @@ class _HomePageState extends State<HomePage> {
       print(e);
     }
   }
-
-
-  void addNewTodo(String todoItem) {
+  
+  addNewTodo(String todoItem) {
     if (todoItem.length > 0) {
 
       Todo todo = new Todo(todoItem.toString(), widget.userId, false);
@@ -95,7 +91,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  void deleteTodo(String todoId) {
+  deleteTodo(String todoId) {
     database.reference().child("todo").child(todoId).remove().then((_) {
       print("Delete $todoId successful");
     });
