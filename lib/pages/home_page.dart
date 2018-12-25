@@ -169,7 +169,9 @@ class _HomePageState extends State<HomePage> {
             );
           });
     } else {
-      return Center(child: Text("Empty"));
+      return Center(child: Text("Welcome. Your list is empty",
+        textAlign: TextAlign.center,
+        style: TextStyle(fontSize: 30.0),));
     }
   }
 
