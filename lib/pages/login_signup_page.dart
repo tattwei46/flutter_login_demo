@@ -14,7 +14,7 @@ class LoginSignUpPage extends StatefulWidget {
 enum FormMode { LOGIN, SIGNUP }
 
 class _LoginSignUpPageState extends State<LoginSignUpPage> {
-  final formKey = new GlobalKey<FormState>();
+  final _formKey = new GlobalKey<FormState>();
 
   String _email;
   String _password;
@@ -26,8 +26,8 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
   bool _isLoading;
 
   // Check if form is valid before perform login or signup
-  bool validateAndSave() {
-    final form = formKey.currentState;
+  bool _validateAndSave() {
+    final form = _formKey.currentState;
     if (form.validate()) {
       form.save();
       return true;
@@ -36,12 +36,12 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
   }
 
   // Perform login or signup
-  validateAndSubmit() async {
+  _validateAndSubmit() async {
     setState(() {
       _errorMessage = "";
       _isLoading = true;
     });
-    if (validateAndSave()) {
+    if (_validateAndSave()) {
       String userId = "";
       try {
         if (_formMode == FormMode.LOGIN) {
@@ -75,7 +75,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
   }
 
   void _changeFormToSignUp() {
-    formKey.currentState.reset();
+    _formKey.currentState.reset();
     _errorMessage = "";
     setState(() {
       _formMode = FormMode.SIGNUP;
@@ -83,7 +83,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
   }
 
   void _changeFormToLogin() {
-    formKey.currentState.reset();
+    _formKey.currentState.reset();
     _errorMessage = "";
     setState(() {
       _formMode = FormMode.LOGIN;
@@ -116,7 +116,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
     return new Container(
         padding: EdgeInsets.all(16.0),
         child: new Form(
-          key: formKey,
+          key: _formKey,
           child: new ListView(
             shrinkWrap: true,
             children: <Widget>[
@@ -227,7 +227,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
                   style: new TextStyle(fontSize: 20.0, color: Colors.white))
               : new Text('Create account',
                   style: new TextStyle(fontSize: 20.0, color: Colors.white)),
-          onPressed: validateAndSubmit,
+          onPressed: _validateAndSubmit,
         ));
   }
 }

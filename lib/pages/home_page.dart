@@ -17,12 +17,10 @@ class HomePage extends StatefulWidget {
 }
 
 class _HomePageState extends State<HomePage> {
-  List<Todo> todoList;
-  Todo todo;
+  List<Todo> _todoList;
 
-  final FirebaseDatabase database = FirebaseDatabase.instance;
+  final FirebaseDatabase _database = FirebaseDatabase.instance;
   final GlobalKey<FormState> formKey = GlobalKey<FormState>();
-  DatabaseReference databaseReference;
 
   final _textEditingController = TextEditingController();
   StreamSubscription<Event> _onTodoAddedSubscription;
@@ -33,8 +31,8 @@ class _HomePageState extends State<HomePage> {
   @override
   void initState() {
     super.initState();
-    todoList = new List();
-    _todoQuery = database
+    _todoList = new List();
+    _todoQuery = _database
         .reference()
         .child("todo")
         .orderByChild("userId")
@@ -51,18 +49,18 @@ class _HomePageState extends State<HomePage> {
   }
 
   _onEntryChanged(Event event) {
-    var oldEntry = todoList.singleWhere((entry) {
+    var oldEntry = _todoList.singleWhere((entry) {
       return entry.key == event.snapshot.key;
     });
 
     setState(() {
-      todoList[todoList.indexOf(oldEntry)] = Todo.fromSnapshot(event.snapshot);
+      _todoList[_todoList.indexOf(oldEntry)] = Todo.fromSnapshot(event.snapshot);
     });
   }
 
   _onEntryAdded(Event event) {
     setState(() {
-      todoList.add(Todo.fromSnapshot(event.snapshot));
+      _todoList.add(Todo.fromSnapshot(event.snapshot));
     });
   }
 
@@ -75,27 +73,27 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  addNewTodo(String todoItem) {
+  _addNewTodo(String todoItem) {
     if (todoItem.length > 0) {
 
       Todo todo = new Todo(todoItem.toString(), widget.userId, false);
-      database.reference().child("todo").push().set(todo.toJson());
+      _database.reference().child("todo").push().set(todo.toJson());
     }
   }
 
-  updateTodo(Todo todo){
+  _updateTodo(Todo todo){
     //Toggle completed
     todo.completed = !todo.completed;
     if (todo != null) {
-      database.reference().child("todo").child(todo.key).set(todo.toJson());
+      _database.reference().child("todo").child(todo.key).set(todo.toJson());
     }
   }
 
-  deleteTodo(String todoId, int index) {
-    database.reference().child("todo").child(todoId).remove().then((_) {
+  _deleteTodo(String todoId, int index) {
+    _database.reference().child("todo").child(todoId).remove().then((_) {
       print("Delete $todoId successful");
       setState(() {
-        todoList.removeAt(index);
+        _todoList.removeAt(index);
       });
     });
   }
@@ -126,7 +124,7 @@ class _HomePageState extends State<HomePage> {
               new FlatButton(
                   child: const Text('Save'),
                   onPressed: () {
-                    addNewTodo(_textEditingController.text.toString());
+                    _addNewTodo(_textEditingController.text.toString());
                     Navigator.pop(context);
                   })
             ],
@@ -135,21 +133,21 @@ class _HomePageState extends State<HomePage> {
     );
   }
 
-  Widget showTodoList() {
-    if (todoList.length > 0) {
+  Widget _showTodoList() {
+    if (_todoList.length > 0) {
       return ListView.builder(
           shrinkWrap: true,
-          itemCount: todoList.length,
+          itemCount: _todoList.length,
           itemBuilder: (BuildContext context, int index) {
-            String todoId = todoList[index].key;
-            String subject = todoList[index].subject;
-            bool completed = todoList[index].completed;
-            String userId = todoList[index].userId;
+            String todoId = _todoList[index].key;
+            String subject = _todoList[index].subject;
+            bool completed = _todoList[index].completed;
+            String userId = _todoList[index].userId;
             return Dismissible(
               key: Key(todoId),
               background: Container(color: Colors.red),
               onDismissed: (direction) async {
-                deleteTodo(todoId, index);
+                _deleteTodo(todoId, index);
               },
               child: ListTile(
                 title: Text(
@@ -165,7 +163,7 @@ class _HomePageState extends State<HomePage> {
                     )
                         : Icon(Icons.done, color: Colors.grey, size: 20.0),
                     onPressed: () {
-                      updateTodo(todoList[index]);
+                      _updateTodo(_todoList[index]);
                     }),
               ),
             );
@@ -187,7 +185,7 @@ class _HomePageState extends State<HomePage> {
                 onPressed: _signOut)
           ],
         ),
-        body: showTodoList(),
+        body: _showTodoList(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
             _showDialog(context);
