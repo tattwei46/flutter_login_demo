@@ -37,11 +37,14 @@ class _RootPageState extends State<RootPage> {
   }
 
   void _onLoggedIn() {
-    setState(() {
-      authStatus = AuthStatus.LOGGED_IN;
-      widget.auth.getCurrentUser().then((user){
+    widget.auth.getCurrentUser().then((user){
+      setState(() {
         _userId = user.uid.toString();
       });
+    });
+    setState(() {
+      authStatus = AuthStatus.LOGGED_IN;
+
     });
   }
 
