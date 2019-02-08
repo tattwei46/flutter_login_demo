@@ -26,7 +26,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
   bool _isLoading;
 
   // Check if form is valid before perform login or signup
-  bool _validateAndSave() {
+  _validateAndSave() {
     final form = _formKey.currentState;
     if (form.validate()) {
       form.save();
@@ -36,7 +36,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
   }
 
   // Perform login or signup
-  _validateAndSubmit() async {
+  void _validateAndSubmit() async {
     setState(() {
       _errorMessage = "";
       _isLoading = true;
@@ -49,13 +49,15 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
           print('Signed in: $userId');
         } else {
           userId = await widget.auth.signUp(_email, _password);
+          widget.auth.sendEmailVerification();
+          _showVerifyEmailSentDialog();
           print('Signed up user: $userId');
         }
         setState(() {
           _isLoading = false;
         });
 
-        if (userId.length > 0 && userId != null) {
+        if (userId.length > 0 && userId != null && _formMode == FormMode.LOGIN) {
           widget.onSignedIn();
         }
 
@@ -71,6 +73,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
       }
     }
   }
+
 
   @override
   void initState() {
@@ -115,6 +118,28 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
       return Center(child: CircularProgressIndicator());
     } return Container(height: 0.0, width: 0.0,);
 
+  }
+
+  void _showVerifyEmailSentDialog() {
+    showDialog(
+      context: context,
+      builder: (BuildContext context) {
+        // return object of type Dialog
+        return AlertDialog(
+          title: new Text("Verify your account"),
+          content: new Text("Link to verify account has been sent to your email"),
+          actions: <Widget>[
+            new FlatButton(
+              child: new Text("Dismiss"),
+              onPressed: () {
+                _changeFormToLogin();
+                Navigator.of(context).pop();
+              },
+            ),
+          ],
+        );
+      },
+    );
   }
 
   Widget _showBody(){
