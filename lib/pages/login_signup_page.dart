@@ -198,7 +198,14 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
               Icons.mail,
               color: Colors.grey,
             )),
-        validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
+        validator: (value) {
+          if (value.isEmpty) {
+            setState(() {
+              _isLoading = false;
+            });
+            return 'Email can\'t be empty';
+          }
+        },
         onSaved: (value) => _email = value,
       ),
     );
@@ -217,7 +224,14 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
               Icons.lock,
               color: Colors.grey,
             )),
-        validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
+        validator: (value) {
+          if (value.isEmpty) {
+            setState(() {
+              _isLoading = false;
+            });
+            return 'Email can\'t be empty';
+          }
+        },
         onSaved: (value) => _password = value,
       ),
     );
