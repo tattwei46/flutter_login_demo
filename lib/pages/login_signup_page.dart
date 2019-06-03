@@ -181,14 +181,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
   Widget _showLogo() {
     return new Hero(
       tag: 'hero',
-      child: Padding(
-        padding: EdgeInsets.fromLTRB(0.0, 70.0, 0.0, 0.0),
-        child: CircleAvatar(
-          backgroundColor: Colors.transparent,
-          radius: 48.0,
-          child: Image.asset('assets/flutter-icon.png'),
-        ),
-      ),
+      child: FlutterLogo(size: 100.0),
     );
   }
 
@@ -205,7 +198,14 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
               Icons.mail,
               color: Colors.grey,
             )),
-        validator: (value) => value.isEmpty ? 'Email can\'t be empty' : null,
+        validator: (value) {
+          if (value.isEmpty) {
+            setState(() {
+              _isLoading = false;
+            });
+            return 'Email can\'t be empty';
+          }
+        },
         onSaved: (value) => _email = value,
       ),
     );
@@ -224,7 +224,14 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
               Icons.lock,
               color: Colors.grey,
             )),
-        validator: (value) => value.isEmpty ? 'Password can\'t be empty' : null,
+        validator: (value) {
+          if (value.isEmpty) {
+            setState(() {
+              _isLoading = false;
+            });
+            return 'Email can\'t be empty';
+          }
+        },
         onSaved: (value) => _password = value,
       ),
     );
