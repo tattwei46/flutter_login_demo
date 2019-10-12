@@ -66,7 +66,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
         setState(() {
           _isLoading = false;
           if (_isIos) {
-            _errorMessage = e.details;
+            _errorMessage = e.message;
           } else
             _errorMessage = e.message;
         });

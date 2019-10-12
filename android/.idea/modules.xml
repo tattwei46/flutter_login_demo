@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/android.iml" filepath="$PROJECT_DIR$/android.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Flutter_SDK/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.14.0+5/android/firebase_auth.iml" filepath="$PROJECT_DIR$/../../../Flutter_SDK/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_auth-0.14.0+5/android/firebase_auth.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Flutter_SDK/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.0+9/android/firebase_core.iml" filepath="$PROJECT_DIR$/../../../Flutter_SDK/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_core-0.4.0+9/android/firebase_core.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../../../Flutter_SDK/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-3.0.7/android/firebase_database.iml" filepath="$PROJECT_DIR$/../../../Flutter_SDK/flutter/.pub-cache/hosted/pub.dartlang.org/firebase_database-3.0.7/android/firebase_database.iml" />
+    </modules>
+  </component>
+</project>
