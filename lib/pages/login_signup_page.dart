@@ -11,8 +11,6 @@ class LoginSignUpPage extends StatefulWidget {
   State<StatefulWidget> createState() => new _LoginSignUpPageState();
 }
 
-enum FormMode { LOGIN, SIGNUP }
-
 class _LoginSignUpPageState extends State<LoginSignUpPage> {
   final _formKey = new GlobalKey<FormState>();
 
@@ -20,9 +18,7 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
   String _password;
   String _errorMessage;
 
-  // Initial form is login form
-  FormMode _formMode = FormMode.LOGIN;
-  bool _isIos;
+  bool _isLoginForm;
   bool _isLoading;
 
   // Check if form is valid before perform login or signup
@@ -44,63 +40,55 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
     if (_validateAndSave()) {
       String userId = "";
       try {
-        if (_formMode == FormMode.LOGIN) {
+        if (_isLoginForm) {
           userId = await widget.auth.signIn(_email, _password);
           print('Signed in: $userId');
         } else {
           userId = await widget.auth.signUp(_email, _password);
           widget.auth.sendEmailVerification();
-          _showVerifyEmailSentDialog();
+          //_showVerifyEmailSentDialog();
           print('Signed up user: $userId');
         }
         setState(() {
           _isLoading = false;
         });
 
-        if (userId.length > 0 && userId != null && _formMode == FormMode.LOGIN) {
+        if (userId.length > 0 && userId != null && _isLoginForm) {
           widget.onSignedIn();
         }
-
       } catch (e) {
         print('Error: $e');
         setState(() {
           _isLoading = false;
-          if (_isIos) {
-            _errorMessage = e.message;
-          } else
-            _errorMessage = e.message;
+          _errorMessage = e.message;
+          _formKey.currentState.reset();
         });
       }
     }
   }
 
-
   @override
   void initState() {
     _errorMessage = "";
     _isLoading = false;
+    _isLoginForm = true;
     super.initState();
   }
 
-  void _changeFormToSignUp() {
+  void resetForm() {
     _formKey.currentState.reset();
     _errorMessage = "";
-    setState(() {
-      _formMode = FormMode.SIGNUP;
-    });
   }
 
-  void _changeFormToLogin() {
-    _formKey.currentState.reset();
-    _errorMessage = "";
+  void toggleFormMode() {
+    resetForm();
     setState(() {
-      _formMode = FormMode.LOGIN;
+      _isLoginForm = !_isLoginForm;
     });
   }
 
   @override
   Widget build(BuildContext context) {
-    _isIos = Theme.of(context).platform == TargetPlatform.iOS;
     return new Scaffold(
         appBar: new AppBar(
           title: new Text('Flutter login demo'),
@@ -113,36 +101,40 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
         ));
   }
 
-  Widget _showCircularProgress(){
+  Widget _showCircularProgress() {
     if (_isLoading) {
       return Center(child: CircularProgressIndicator());
-    } return Container(height: 0.0, width: 0.0,);
-
-  }
-
-  void _showVerifyEmailSentDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        // return object of type Dialog
-        return AlertDialog(
-          title: new Text("Verify your account"),
-          content: new Text("Link to verify account has been sent to your email"),
-          actions: <Widget>[
-            new FlatButton(
-              child: new Text("Dismiss"),
-              onPressed: () {
-                _changeFormToLogin();
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
+    }
+    return Container(
+      height: 0.0,
+      width: 0.0,
     );
   }
 
-  Widget _showBody(){
+//  void _showVerifyEmailSentDialog() {
+//    showDialog(
+//      context: context,
+//      builder: (BuildContext context) {
+//        // return object of type Dialog
+//        return AlertDialog(
+//          title: new Text("Verify your account"),
+//          content:
+//              new Text("Link to verify account has been sent to your email"),
+//          actions: <Widget>[
+//            new FlatButton(
+//              child: new Text("Dismiss"),
+//              onPressed: () {
+//                toggleFormMode();
+//                Navigator.of(context).pop();
+//              },
+//            ),
+//          ],
+//        );
+//      },
+//    );
+//  }
+
+  Widget _showBody() {
     return new Container(
         padding: EdgeInsets.all(16.0),
         child: new Form(
@@ -232,16 +224,10 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
 
   Widget _showSecondaryButton() {
     return new FlatButton(
-      child: _formMode == FormMode.LOGIN
-          ? new Text('Create an account',
-              style: new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300))
-          : new Text('Have an account? Sign in',
-              style:
-                  new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
-      onPressed: _formMode == FormMode.LOGIN
-          ? _changeFormToSignUp
-          : _changeFormToLogin,
-    );
+        child: new Text(
+            _isLoginForm ? 'Create an account' : 'Have an account? Sign in',
+            style: new TextStyle(fontSize: 18.0, fontWeight: FontWeight.w300)),
+        onPressed: toggleFormMode);
   }
 
   Widget _showPrimaryButton() {
@@ -251,13 +237,11 @@ class _LoginSignUpPageState extends State<LoginSignUpPage> {
           height: 40.0,
           child: new RaisedButton(
             elevation: 5.0,
-            shape: new RoundedRectangleBorder(borderRadius: new BorderRadius.circular(30.0)),
+            shape: new RoundedRectangleBorder(
+                borderRadius: new BorderRadius.circular(30.0)),
             color: Colors.blue,
-            child: _formMode == FormMode.LOGIN
-                ? new Text('Login',
-                    style: new TextStyle(fontSize: 20.0, color: Colors.white))
-                : new Text('Create account',
-                    style: new TextStyle(fontSize: 20.0, color: Colors.white)),
+            child: new Text(_isLoginForm ? 'Login' : 'Create account',
+                style: new TextStyle(fontSize: 20.0, color: Colors.white)),
             onPressed: _validateAndSubmit,
           ),
         ));
