@@ -22,7 +22,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
   bool _isLoading;
 
   // Check if form is valid before perform login or signup
-  bool _validateAndSave() {
+  bool validateAndSave() {
     final form = _formKey.currentState;
     if (form.validate()) {
       form.save();
@@ -32,12 +32,12 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
   }
 
   // Perform login or signup
-  void _validateAndSubmit() async {
+  void validateAndSubmit() async {
     setState(() {
       _errorMessage = "";
       _isLoading = true;
     });
-    if (_validateAndSave()) {
+    if (validateAndSave()) {
       String userId = "";
       try {
         if (_isLoginForm) {
@@ -142,18 +142,18 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
           child: new ListView(
             shrinkWrap: true,
             children: <Widget>[
-              _showLogo(),
-              _showEmailInput(),
-              _showPasswordInput(),
-              _showPrimaryButton(),
-              _showSecondaryButton(),
-              _showErrorMessage(),
+              showLogo(),
+              showEmailInput(),
+              showPasswordInput(),
+              showPrimaryButton(),
+              showSecondaryButton(),
+              showErrorMessage(),
             ],
           ),
         ));
   }
 
-  Widget _showErrorMessage() {
+  Widget showErrorMessage() {
     if (_errorMessage.length > 0 && _errorMessage != null) {
       return new Text(
         _errorMessage,
@@ -170,7 +170,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
     }
   }
 
-  Widget _showLogo() {
+  Widget showLogo() {
     return new Hero(
       tag: 'hero',
       child: Padding(
@@ -184,7 +184,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
     );
   }
 
-  Widget _showEmailInput() {
+  Widget showEmailInput() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(0.0, 100.0, 0.0, 0.0),
       child: new TextFormField(
@@ -203,7 +203,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
     );
   }
 
-  Widget _showPasswordInput() {
+  Widget showPasswordInput() {
     return Padding(
       padding: const EdgeInsets.fromLTRB(0.0, 15.0, 0.0, 0.0),
       child: new TextFormField(
@@ -222,7 +222,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
     );
   }
 
-  Widget _showSecondaryButton() {
+  Widget showSecondaryButton() {
     return new FlatButton(
         child: new Text(
             _isLoginForm ? 'Create an account' : 'Have an account? Sign in',
@@ -230,7 +230,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
         onPressed: toggleFormMode);
   }
 
-  Widget _showPrimaryButton() {
+  Widget showPrimaryButton() {
     return new Padding(
         padding: EdgeInsets.fromLTRB(0.0, 45.0, 0.0, 0.0),
         child: SizedBox(
@@ -242,7 +242,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
             color: Colors.blue,
             child: new Text(_isLoginForm ? 'Login' : 'Create account',
                 style: new TextStyle(fontSize: 20.0, color: Colors.white)),
-            onPressed: _validateAndSubmit,
+            onPressed: validateAndSubmit,
           ),
         ));
   }
