@@ -3,6 +3,12 @@ import 'package:flutter_login_demo/pages/login_signup_page.dart';
 import 'package:flutter_login_demo/services/authentication.dart';
 import 'package:flutter_login_demo/pages/home_page.dart';
 
+enum AuthStatus {
+  NOT_DETERMINED,
+  NOT_LOGGED_IN,
+  LOGGED_IN,
+}
+
 class RootPage extends StatefulWidget {
   RootPage({this.auth});
 
@@ -10,12 +16,6 @@ class RootPage extends StatefulWidget {
 
   @override
   State<StatefulWidget> createState() => new _RootPageState();
-}
-
-enum AuthStatus {
-  NOT_DETERMINED,
-  NOT_LOGGED_IN,
-  LOGGED_IN,
 }
 
 class _RootPageState extends State<RootPage> {
@@ -36,7 +36,7 @@ class _RootPageState extends State<RootPage> {
     });
   }
 
-  void onLoggedIn() {
+  void loginCallback() {
     widget.auth.getCurrentUser().then((user) {
       setState(() {
         _userId = user.uid.toString();
@@ -47,7 +47,7 @@ class _RootPageState extends State<RootPage> {
     });
   }
 
-  void onSignedOut() {
+  void logoutCallback() {
     setState(() {
       authStatus = AuthStatus.NOT_LOGGED_IN;
       _userId = "";
@@ -72,7 +72,7 @@ class _RootPageState extends State<RootPage> {
       case AuthStatus.NOT_LOGGED_IN:
         return new LoginSignupPage(
           auth: widget.auth,
-          onSignedIn: onLoggedIn,
+          loginCallback: loginCallback,
         );
         break;
       case AuthStatus.LOGGED_IN:
@@ -80,7 +80,7 @@ class _RootPageState extends State<RootPage> {
           return new HomePage(
             userId: _userId,
             auth: widget.auth,
-            onSignedOut: onSignedOut,
+            logoutCallback: logoutCallback,
           );
         } else
           return buildWaitingScreen();

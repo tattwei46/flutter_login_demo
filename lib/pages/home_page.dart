@@ -5,11 +5,11 @@ import 'package:flutter_login_demo/models/todo.dart';
 import 'dart:async';
 
 class HomePage extends StatefulWidget {
-  HomePage({Key key, this.auth, this.userId, this.onSignedOut})
+  HomePage({Key key, this.auth, this.userId, this.logoutCallback})
       : super(key: key);
 
   final BaseAuth auth;
-  final VoidCallback onSignedOut;
+  final VoidCallback logoutCallback;
   final String userId;
 
   @override
@@ -135,7 +135,7 @@ class _HomePageState extends State<HomePage> {
   signOut() async {
     try {
       await widget.auth.signOut();
-      widget.onSignedOut();
+      widget.logoutCallback();
     } catch (e) {
       print(e);
     }

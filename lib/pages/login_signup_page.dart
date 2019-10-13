@@ -2,10 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_login_demo/services/authentication.dart';
 
 class LoginSignupPage extends StatefulWidget {
-  LoginSignupPage({this.auth, this.onSignedIn});
+  LoginSignupPage({this.auth, this.loginCallback});
 
   final BaseAuth auth;
-  final VoidCallback onSignedIn;
+  final VoidCallback loginCallback;
 
   @override
   State<StatefulWidget> createState() => new _LoginSignupPageState();
@@ -18,7 +18,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
   String _password;
   String _errorMessage;
 
-  bool _isLoginForm;
+    bool _isLoginForm;
   bool _isLoading;
 
   // Check if form is valid before perform login or signup
@@ -54,7 +54,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
         });
 
         if (userId.length > 0 && userId != null && _isLoginForm) {
-          widget.onSignedIn();
+          widget.loginCallback();
         }
       } catch (e) {
         print('Error: $e');
