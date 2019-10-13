@@ -50,5 +50,4 @@ class Auth implements BaseAuth {
     FirebaseUser user = await _firebaseAuth.currentUser();
     return user.isEmailVerified;
   }
-
 }

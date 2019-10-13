@@ -36,26 +36,25 @@ class _RootPageState extends State<RootPage> {
     });
   }
 
-  void _onLoggedIn() {
-    widget.auth.getCurrentUser().then((user){
+  void onLoggedIn() {
+    widget.auth.getCurrentUser().then((user) {
       setState(() {
         _userId = user.uid.toString();
       });
     });
     setState(() {
       authStatus = AuthStatus.LOGGED_IN;
-
     });
   }
 
-  void _onSignedOut() {
+  void onSignedOut() {
     setState(() {
       authStatus = AuthStatus.NOT_LOGGED_IN;
       _userId = "";
     });
   }
 
-  Widget _buildWaitingScreen() {
+  Widget buildWaitingScreen() {
     return Scaffold(
       body: Container(
         alignment: Alignment.center,
@@ -68,12 +67,12 @@ class _RootPageState extends State<RootPage> {
   Widget build(BuildContext context) {
     switch (authStatus) {
       case AuthStatus.NOT_DETERMINED:
-        return _buildWaitingScreen();
+        return buildWaitingScreen();
         break;
       case AuthStatus.NOT_LOGGED_IN:
         return new LoginSignUpPage(
           auth: widget.auth,
-          onSignedIn: _onLoggedIn,
+          onSignedIn: onLoggedIn,
         );
         break;
       case AuthStatus.LOGGED_IN:
@@ -81,12 +80,13 @@ class _RootPageState extends State<RootPage> {
           return new HomePage(
             userId: _userId,
             auth: widget.auth,
-            onSignedOut: _onSignedOut,
+            onSignedOut: onSignedOut,
           );
-        } else return _buildWaitingScreen();
+        } else
+          return buildWaitingScreen();
         break;
       default:
-        return _buildWaitingScreen();
+        return buildWaitingScreen();
     }
   }
 }

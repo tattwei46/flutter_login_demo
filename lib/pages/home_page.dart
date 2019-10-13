@@ -28,13 +28,13 @@ class _HomePageState extends State<HomePage> {
 
   Query _todoQuery;
 
-  bool _isEmailVerified = false;
+  //bool _isEmailVerified = false;
 
   @override
   void initState() {
     super.initState();
 
-    _checkEmailVerification();
+    //_checkEmailVerification();
 
     _todoList = new List();
     _todoQuery = _database
@@ -42,70 +42,71 @@ class _HomePageState extends State<HomePage> {
         .child("todo")
         .orderByChild("userId")
         .equalTo(widget.userId);
-    _onTodoAddedSubscription = _todoQuery.onChildAdded.listen(_onEntryAdded);
-    _onTodoChangedSubscription = _todoQuery.onChildChanged.listen(_onEntryChanged);
+    _onTodoAddedSubscription = _todoQuery.onChildAdded.listen(onEntryAdded);
+    _onTodoChangedSubscription =
+        _todoQuery.onChildChanged.listen(onEntryChanged);
   }
 
-  void _checkEmailVerification() async {
-    _isEmailVerified = await widget.auth.isEmailVerified();
-    if (!_isEmailVerified) {
-      _showVerifyEmailDialog();
-    }
-  }
+//  void _checkEmailVerification() async {
+//    _isEmailVerified = await widget.auth.isEmailVerified();
+//    if (!_isEmailVerified) {
+//      _showVerifyEmailDialog();
+//    }
+//  }
 
-  void _resentVerifyEmail(){
-    widget.auth.sendEmailVerification();
-    _showVerifyEmailSentDialog();
-  }
+//  void _resentVerifyEmail(){
+//    widget.auth.sendEmailVerification();
+//    _showVerifyEmailSentDialog();
+//  }
 
-  void _showVerifyEmailDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        // return object of type Dialog
-        return AlertDialog(
-          title: new Text("Verify your account"),
-          content: new Text("Please verify account in the link sent to email"),
-          actions: <Widget>[
-            new FlatButton(
-              child: new Text("Resent link"),
-              onPressed: () {
-                Navigator.of(context).pop();
-                _resentVerifyEmail();
-              },
-            ),
-            new FlatButton(
-              child: new Text("Dismiss"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
+//  void _showVerifyEmailDialog() {
+//    showDialog(
+//      context: context,
+//      builder: (BuildContext context) {
+//        // return object of type Dialog
+//        return AlertDialog(
+//          title: new Text("Verify your account"),
+//          content: new Text("Please verify account in the link sent to email"),
+//          actions: <Widget>[
+//            new FlatButton(
+//              child: new Text("Resent link"),
+//              onPressed: () {
+//                Navigator.of(context).pop();
+//                _resentVerifyEmail();
+//              },
+//            ),
+//            new FlatButton(
+//              child: new Text("Dismiss"),
+//              onPressed: () {
+//                Navigator.of(context).pop();
+//              },
+//            ),
+//          ],
+//        );
+//      },
+//    );
+//  }
 
-  void _showVerifyEmailSentDialog() {
-    showDialog(
-      context: context,
-      builder: (BuildContext context) {
-        // return object of type Dialog
-        return AlertDialog(
-          title: new Text("Verify your account"),
-          content: new Text("Link to verify account has been sent to your email"),
-          actions: <Widget>[
-            new FlatButton(
-              child: new Text("Dismiss"),
-              onPressed: () {
-                Navigator.of(context).pop();
-              },
-            ),
-          ],
-        );
-      },
-    );
-  }
+//  void _showVerifyEmailSentDialog() {
+//    showDialog(
+//      context: context,
+//      builder: (BuildContext context) {
+//        // return object of type Dialog
+//        return AlertDialog(
+//          title: new Text("Verify your account"),
+//          content: new Text("Link to verify account has been sent to your email"),
+//          actions: <Widget>[
+//            new FlatButton(
+//              child: new Text("Dismiss"),
+//              onPressed: () {
+//                Navigator.of(context).pop();
+//              },
+//            ),
+//          ],
+//        );
+//      },
+//    );
+//  }
 
   @override
   void dispose() {
@@ -114,23 +115,24 @@ class _HomePageState extends State<HomePage> {
     super.dispose();
   }
 
-  _onEntryChanged(Event event) {
+  onEntryChanged(Event event) {
     var oldEntry = _todoList.singleWhere((entry) {
       return entry.key == event.snapshot.key;
     });
 
     setState(() {
-      _todoList[_todoList.indexOf(oldEntry)] = Todo.fromSnapshot(event.snapshot);
+      _todoList[_todoList.indexOf(oldEntry)] =
+          Todo.fromSnapshot(event.snapshot);
     });
   }
 
-  _onEntryAdded(Event event) {
+  onEntryAdded(Event event) {
     setState(() {
       _todoList.add(Todo.fromSnapshot(event.snapshot));
     });
   }
 
-  _signOut() async {
+  signOut() async {
     try {
       await widget.auth.signOut();
       widget.onSignedOut();
@@ -139,15 +141,14 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  _addNewTodo(String todoItem) {
+  addNewTodo(String todoItem) {
     if (todoItem.length > 0) {
-
       Todo todo = new Todo(todoItem.toString(), widget.userId, false);
       _database.reference().child("todo").push().set(todo.toJson());
     }
   }
 
-  _updateTodo(Todo todo){
+  updateTodo(Todo todo) {
     //Toggle completed
     todo.completed = !todo.completed;
     if (todo != null) {
@@ -155,7 +156,7 @@ class _HomePageState extends State<HomePage> {
     }
   }
 
-  _deleteTodo(String todoId, int index) {
+  deleteTodo(String todoId, int index) {
     _database.reference().child("todo").child(todoId).remove().then((_) {
       print("Delete $todoId successful");
       setState(() {
@@ -164,15 +165,16 @@ class _HomePageState extends State<HomePage> {
     });
   }
 
-  _showDialog(BuildContext context) async {
+  showAddTodoDialog(BuildContext context) async {
     _textEditingController.clear();
     await showDialog<String>(
         context: context,
-      builder: (BuildContext context) {
+        builder: (BuildContext context) {
           return AlertDialog(
             content: new Row(
               children: <Widget>[
-                new Expanded(child: new TextField(
+                new Expanded(
+                    child: new TextField(
                   controller: _textEditingController,
                   autofocus: true,
                   decoration: new InputDecoration(
@@ -190,16 +192,15 @@ class _HomePageState extends State<HomePage> {
               new FlatButton(
                   child: const Text('Save'),
                   onPressed: () {
-                    _addNewTodo(_textEditingController.text.toString());
+                    addNewTodo(_textEditingController.text.toString());
                     Navigator.pop(context);
                   })
             ],
           );
-      }
-    );
+        });
   }
 
-  Widget _showTodoList() {
+  Widget showTodoList() {
     if (_todoList.length > 0) {
       return ListView.builder(
           shrinkWrap: true,
@@ -213,7 +214,7 @@ class _HomePageState extends State<HomePage> {
               key: Key(todoId),
               background: Container(color: Colors.red),
               onDismissed: (direction) async {
-                _deleteTodo(todoId, index);
+                deleteTodo(todoId, index);
               },
               child: ListTile(
                 title: Text(
@@ -223,21 +224,24 @@ class _HomePageState extends State<HomePage> {
                 trailing: IconButton(
                     icon: (completed)
                         ? Icon(
-                      Icons.done_outline,
-                      color: Colors.green,
-                      size: 20.0,
-                    )
+                            Icons.done_outline,
+                            color: Colors.green,
+                            size: 20.0,
+                          )
                         : Icon(Icons.done, color: Colors.grey, size: 20.0),
                     onPressed: () {
-                      _updateTodo(_todoList[index]);
+                      updateTodo(_todoList[index]);
                     }),
               ),
             );
           });
     } else {
-      return Center(child: Text("Welcome. Your list is empty",
+      return Center(
+          child: Text(
+        "Welcome. Your list is empty",
         textAlign: TextAlign.center,
-        style: TextStyle(fontSize: 30.0),));
+        style: TextStyle(fontSize: 30.0),
+      ));
     }
   }
 
@@ -250,17 +254,16 @@ class _HomePageState extends State<HomePage> {
             new FlatButton(
                 child: new Text('Logout',
                     style: new TextStyle(fontSize: 17.0, color: Colors.white)),
-                onPressed: _signOut)
+                onPressed: signOut)
           ],
         ),
-        body: _showTodoList(),
+        body: showTodoList(),
         floatingActionButton: FloatingActionButton(
           onPressed: () {
-            _showDialog(context);
+            showAddTodoDialog(context);
           },
           tooltip: 'Increment',
           child: Icon(Icons.add),
-        )
-    );
+        ));
   }
 }
