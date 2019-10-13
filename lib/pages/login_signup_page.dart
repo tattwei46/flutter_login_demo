@@ -95,7 +95,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
         ),
         body: Stack(
           children: <Widget>[
-            _showBody(),
+            _showForm(),
             _showCircularProgress(),
           ],
         ));
@@ -134,7 +134,7 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
 //    );
 //  }
 
-  Widget _showBody() {
+  Widget _showForm() {
     return new Container(
         padding: EdgeInsets.all(16.0),
         child: new Form(
