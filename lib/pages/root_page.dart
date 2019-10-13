@@ -70,7 +70,7 @@ class _RootPageState extends State<RootPage> {
         return buildWaitingScreen();
         break;
       case AuthStatus.NOT_LOGGED_IN:
-        return new LoginSignUpPage(
+        return new LoginSignupPage(
           auth: widget.auth,
           onSignedIn: onLoggedIn,
         );
