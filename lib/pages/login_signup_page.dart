@@ -65,7 +65,9 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
         });
       }
     } else {
-      _isLoading = false;
+      setState(() {
+				_isLoading = false;
+			});
     }
   }
 
