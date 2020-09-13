@@ -64,6 +64,8 @@ class _LoginSignupPageState extends State<LoginSignupPage> {
           _formKey.currentState.reset();
         });
       }
+    } else {
+      _isLoading = false;
     }
   }
 
